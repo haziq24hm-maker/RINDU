@@ -32,4 +32,32 @@ function openLetter() {
   }
   
   typeWriter();
+}// Kod Kawalan Progress Bar Lagu
+const progressBar = document.getElementById('progress-bar');
+const currentTimeEl = document.getElementById('current-time');
+const durationEl = document.getElementById('duration');
+
+function formatTime(seconds) {
+  const min = Math.floor(seconds / 60);
+  const sec = Math.floor(seconds % 60);
+  return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+}
+
+const bgMusic = document.getElementById('bg-music');
+if (bgMusic) {
+  bgMusic.addEventListener('loadedmetadata', () => {
+    if (progressBar) progressBar.max = bgMusic.duration;
+    if (durationEl) durationEl.innerText = formatTime(bgMusic.duration);
+  });
+
+  bgMusic.addEventListener('timeupdate', () => {
+    if (progressBar) progressBar.value = bgMusic.currentTime;
+    if (currentTimeEl) currentTimeEl.innerText = formatTime(bgMusic.currentTime);
+  });
+}
+
+if (progressBar && bgMusic) {
+  progressBar.addEventListener('input', () => {
+    bgMusic.currentTime = progressBar.value;
+  });
 }
