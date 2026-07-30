@@ -1,4 +1,4 @@
-const message = "Abg sangat rindu pada kesayangan abg. Maafkan abg. Abg mengaku semua kesilapan dari abg. Terimalah kemaafan ikhlas dari hati.";
+const message = "Abg sangat rindu pada kesayangan abg. Maafkan abg. Abg mengaku semua kesilapan dari abg. Terimalah kemaafan dari abang ikhlas dari hati.";
 
 function openLetter() {
   // Mainkan muzik (disesuaikan untuk iOS)
