@@ -1,4 +1,4 @@
-const message = "im so sorry babyy :(. aku bener bener minta maaf sayangku, aku ngga sengaja.. maafin aku sayangku cintakuu.";
+const message = "Abg sangat rindu pada kesayangan abg. Maafkan abg. Abg mengaku semua kesilapan dari abg. Terimalah kemaafan ikhlas dari hati.";
 
 function openLetter() {
   // Mainkan muzik (disesuaikan untuk iOS)
