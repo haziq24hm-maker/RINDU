@@ -1,12 +1,20 @@
 const message = "im so sorry babyy :(. aku bener bener minta maaf sayangku, aku ngga sengaja.. maafin aku sayangku cintakuu.";
 
 function openLetter() {
-  // Mainkan muzik
-  document.getElementById('bg-music').play();
+  // Mainkan muzik (disesuaikan untuk iOS)
+  const bgMusic = document.getElementById('bg-music');
+  if (bgMusic) {
+    bgMusic.play().catch(error => {
+      console.log("iOS autoplay blocked or file error:", error);
+    });
+  }
 
   // Sembunyikan sampul, tunjukkan surat
-  document.getElementById('envelope-container').classList.add('hidden');
-  document.getElementById('letter-container').classList.remove('hidden');
+  const envelope = document.getElementById('envelope-container');
+  const letter = document.getElementById('letter-container');
+  
+  if (envelope) envelope.classList.add('hidden');
+  if (letter) letter.classList.remove('hidden');
 
   // Kesan menaip automatik (Typewriter effect)
   let index = 0;
@@ -14,11 +22,14 @@ function openLetter() {
 
   function typeWriter() {
     if (index < message.length) {
-      document.getElementById("typed-text").innerHTML += message.charAt(index);
+      const typedText = document.getElementById("typed-text");
+      if (typedText) {
+        typedText.innerHTML += message.charAt(index);
+      }
       index++;
       setTimeout(typeWriter, speed);
     }
   }
-
+  
   typeWriter();
 }
