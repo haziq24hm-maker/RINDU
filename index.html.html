@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Letter For You</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Muzik Latar Belakang -->
+  <audio id="bg-music" loop>
+    <source src="song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Sampul Surat (Mula-mula) -->
+  <div id="envelope-container" onclick="openLetter()">
+    <div class="envelope">
+      <p>FOR</p>
+      <h2>My Babyy</h2>
+      <span>✦ TAP TO OPEN ✦</span>
+    </div>
+  </div>
+
+  <!-- Isi Surat (Tersembunyi Dahulu) -->
+  <div id="letter-container" class="hidden">
+    <div class="letter-box">
+      <h1>Apology Letter</h1>
+      <p class="date">4 May 2026</p>
+      <h2>Dearest Nazwa</h2>
+      <p id="typed-text"></p>
+      <p class="signature">your boyfie</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
